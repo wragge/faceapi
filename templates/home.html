@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: http://ogp.me/ns# schema: http://schema.org/" typeof="schema:WebPage">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Face API</title>
+    <meta property="og:title" content="Face API" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://faceapi.herokuapp.com/" />
+    <meta property="og:image" content="http://faceapi.herokuapp.com/static/images/faces.png" />
+    <meta property="og:description" content="A simple API to a collection of almost 4000 faces extracted from Trove's digitised newspapers." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@wragge" />
+    <meta name="schema:thumbnailUrl" content="http://faceapi.herokuapp.com/static/images/faces.png">
 
     <!-- Bootstrap -->
     <link href="static/css/bootstrap.min.css" rel="stylesheet">
@@ -22,8 +30,8 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8">
-        <h1>Face API</h1>
-        <p>A simple API to a collection of faces extracted from <a href="http://trove.nla.gov.au">Trove's digitised newspapers</a>.</p>
+        <h1 property="schema:name">Face API</h1>
+        <p property="schema:description">A simple API to a collection of faces extracted from <a href="http://trove.nla.gov.au">Trove's digitised newspapers</a>.</p>
         <p>Currently there are about 4,000 faces from 1880 to 1910. More will be added soon.</p>
 
         <ul>
@@ -167,7 +175,7 @@
       </pre>
     <hr>
     <footer>
-    Created by <a href="http://discontents.com.au/about-me">Tim Sherratt</a> (<a href="http://twitter.com/wragge">@wragge</a>).
+    <p><small><span property="schema:creator" typeof="schema:Person">Created by <a property="schema:sameAs" href="http://discontents.com.au/about-me/"><span property="schema:name">Tim Sherratt</span></a> (<a property="schema:sameAs" href="http://twitter.com/wragge">@wragge</a>).</span></small></p>
     </footer>
       
   </div>
