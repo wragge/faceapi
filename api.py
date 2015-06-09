@@ -40,18 +40,22 @@ class GetFaces(Resource):
         parser.add_argument('n', type=int, default=20)
         parser.add_argument('year', type=int)
         parser.add_argument('title_id', type=str)
+        parser.add_argument('article_id', type=str)
         args = parser.parse_args()
-        if args['n'] > 100:
-            number = 100
-        else:
-            number = args['n']
         collection = get_fd_faces()
-        query = {'random_id': {'$near': [random.random(), 0]}}
-        if args['year']:
-            query['year'] = int(args['year'])
-        if args['title_id']:
-            query['title_id'] = args['title_id']
-        faces = list(collection.find(query).limit(number))
+        if args['article_id']:
+            faces = list(collection.find({'article_id': args['article_id']}))
+        else:
+            if args['n'] > 100:
+                number = 100
+            else:
+                number = args['n']
+            query = {'random_id': {'$near': [random.random(), 0]}}
+            if args['year']:
+                query['year'] = int(args['year'])
+            if args['title_id']:
+                query['title_id'] = args['title_id']
+            faces = list(collection.find(query).limit(number))
         return faces
 
 
