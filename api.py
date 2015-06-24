@@ -1,13 +1,13 @@
 from flask import Flask, request, render_template
 from flask_restful import Resource, Api
 from pymongo import MongoClient
-from flask_restful import fields, marshal_with, reqparse, inputs
+from flask_restful import fields, marshal_with, reqparse
 import random
 from bson.son import SON
+import os
 
-from credentials import MONGOLAB_URL
+MONGOLAB_URL = os.environ['MONGOLAB_URL']
 
-rootdir = '../images/faces'
 image_url = 'http://facedepot.s3.amazonaws.com/{image}.jpg'
 article_url = 'http://nla.gov.au/nla.news-article{article_id}'
 
